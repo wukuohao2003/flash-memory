@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: flash_memory
+productName: pc
 directories:
   buildResources: build
 files:
@@ -11,7 +11,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: flash_memory
+  executableName: pc
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}

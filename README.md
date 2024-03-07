@@ -1,4 +1,4 @@
-# flash_memory
+# pc
 
 An Electron application with React
 
@@ -11,24 +11,24 @@ An Electron application with React
 ### Install
 
 ```bash
-$ pnpm install
+$ yarn
 ```
 
 ### Development
 
 ```bash
-$ pnpm dev
+$ yarn dev
 ```
 
 ### Build
 
 ```bash
 # For windows
-$ pnpm build:win
+$ yarn build:win
 
 # For macOS
-$ pnpm build:mac
+$ yarn build:mac
 
 # For Linux
-$ pnpm build:linux
+$ yarn build:linux
 ```

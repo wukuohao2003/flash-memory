@@ -1,11 +1,11 @@
 @import './base.css';
 
 body {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url('./wavy-lines.svg');
+  /* background-image: url('./wavy-lines.svg'); */
   background-size: cover;
   user-select: none;
 }
@@ -27,7 +27,7 @@ code {
 }
 
 #root {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -54,6 +54,7 @@ code {
   font-weight: 600;
   margin-bottom: 10px;
 }
+
 
 .text {
   font-size: 28px;

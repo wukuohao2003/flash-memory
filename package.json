@@ -18,9 +18,14 @@
     "build:linux": "npm run build && electron-builder --linux"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.1",
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
-    "electron-updater": "^6.1.7"
+    "antd": "^5.15.1",
+    "axios": "^1.6.7",
+    "electron-updater": "^6.1.7",
+    "react-router-dom": "^6.22.3",
+    "sass": "^1.71.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",

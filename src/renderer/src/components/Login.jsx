@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.scss'
 import loginleftbottom from '../assets/loginleftbottom.svg'
-import gugeLogo from '../assets/gugeLogo.svg'
+import { Outlet, useLocation } from 'react-router-dom'
 
 export default function Login() {
+    const location = useLocation()
     return (
         <div style={{ display: 'flex', width: '100%', height: '100%' }}>
             <div className='login-left'>
@@ -29,40 +30,7 @@ export default function Login() {
                 </div>
             </div>
             <div className='login-right'>
-                <div className="login-right-navs">
-                    <h1>Login</h1>
-                    <div className='login-right-nav'>
-                        <p>Username</p>
-                        <input type="text" placeholder='Enter your Username' />
-                    </div>
-                    <div className='login-right-nav'>
-                        <p>Email</p>
-                        <input type="text" placeholder='Enter your Email' />
-                    </div>
-                    <div className='login-right-nav'>
-                        <p>Password</p>
-                        <input type="text" placeholder='Enter your Password' />
-                    </div>
-                    <div className="login-right-center">
-                        <div className='login-right-center-t'>
-                            <div className="login-right-center-t-l">
-                                <input type="checkbox" />
-                                <span>Remember me</span>
-                            </div>
-                            <a href="javascript:;">Forgot password?</a>
-                        </div>
-                        <button>Login</button>
-                        <div className='login-right-center-b'>
-                            <hr />or<hr />
-                        </div>
-                    </div>
-                    <div className="login-right-bottom">
-                        <div className="login-right-bottom-t">
-                            <img src={gugeLogo} alt="" />
-                        </div>
-                        <p>Don't have an account? <span>Create Account</span></p>
-                    </div>
-                </div>
+                <Outlet></Outlet>
             </div>
         </div>
     )

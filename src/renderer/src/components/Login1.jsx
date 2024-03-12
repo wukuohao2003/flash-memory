@@ -50,7 +50,7 @@ export default function Login1() {
                         <input type="checkbox" checked={flg} onChange={(e) => { setflg(e.target.checked) }} />
                         <span>Remember me</span>
                     </div>
-                    <a href="javascript:;">Forgot password?</a>
+                    <a href="javascript:;" onClick={() => { navigate('/app/login/forgotpwd') }}>Forgot password?</a>
                 </div>
                 <button
                     onClick={async () => {
@@ -75,7 +75,7 @@ export default function Login1() {
                                             } else {
                                                 message.error(data.msg)
                                             }
-                                        }else{
+                                        } else {
                                             message.warning('请查阅协议！')
                                         }
                                     } else {

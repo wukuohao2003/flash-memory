@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-left {
+    flex: 5;
+    background: #7188f9;
+    height: 100%;
+    box-sizing: border-box;
+
+    .login-left-top {
+        height: 50%;
+        box-sizing: border-box;
+        width: 100%;
+
+        .login-left-top-t {
+            padding: 15% 11%;
+            display: flex;
+            align-items: center;
+
+            h2 {
+                font-size: 30px;
+                color: #fefefe;
+                font-weight: 400;
+                padding-left: 20px;
+            }
+        }
+
+        .login-left-top-b {
+            padding-left: 11%;
+            padding-right: 11%;
+
+            h2 {
+                font-size: 36px;
+                color: #fefefe;
+            }
+
+            p {
+                font-size: 13px;
+                color: #fefefe;
+                padding-top: 5%;
+            }
+        }
+    }
+
+    .login-left-bottom {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            line-height: 100px;
+        }
+    }
+}
+
+.login-right {
+    flex: 6;
+    box-sizing: border-box;
+    padding: 7%;
+
+    
+}

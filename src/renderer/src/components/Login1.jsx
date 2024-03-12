@@ -6,6 +6,7 @@ import { Input } from 'react-vant';
 import './Login1.scss'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { message } from 'antd';
 
 axios.defaults.baseURL = 'http://localhost:3000/'
 export default function Login1() {
@@ -14,13 +15,8 @@ export default function Login1() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
-
-    // 判断 用户名、邮箱、密码
-    const [usernameflg, setUsernameflg] = useState(false)
-    const [emailflg, setEmailflg] = useState(false)
-    const [eflg, setEflg] = useState(false)
-    const [passwordflg, setPasswordflg] = useState(false)
-    const [pflg, setPflg] = useState(false)
+    // 协议
+    const [flg, setflg] = useState(false)
 
     return (
         <div className="login-right-navs">
@@ -51,7 +47,7 @@ export default function Login1() {
             <div className="login-right-center">
                 <div className='login-right-center-t'>
                     <div className="login-right-center-t-l">
-                        <input type="checkbox" />
+                        <input type="checkbox" checked={flg} onChange={(e) => { setflg(e.target.checked) }} />
                         <span>Remember me</span>
                     </div>
                     <a href="javascript:;">Forgot password?</a>
@@ -67,27 +63,32 @@ export default function Login1() {
                                 if (Reg.test(email)) {
                                     // 密码
                                     if (password) {
-                                        let obj = { username, password, email }
-                                        let { data } = await axios.post('/users/login', obj)
-                                        if (data.code === 200) {
-                                            // 存储token跳转至首页
-                                            localStorage.setItem('token', JSON.stringify(data.token))
-                                            navigate('/app/home')
-                                            console.log(data.msg);
-                                        } else {
-                                            console.log(data.msg);
+                                        // 协议
+                                        if (flg) {
+                                            let obj = { username, password, email }
+                                            let { data } = await axios.post('/users/login', obj)
+                                            if (data.code === 200) {
+                                                // 存储token跳转至首页
+                                                localStorage.setItem('token', JSON.stringify(data.token))
+                                                navigate('/app/home')
+                                                message.success(data.msg);
+                                            } else {
+                                                message.error(data.msg)
+                                            }
+                                        }else{
+                                            message.warning('请查阅协议！')
                                         }
                                     } else {
-                                        setPasswordflg(true)
+                                        message.warning('请输入密码')
                                     }
                                 } else {
-                                    setEflg(true)
+                                    message.warning('请输入正确的邮箱')
                                 }
                             } else {
-                                setEmailflg(true)
+                                message.warning('请输入邮箱')
                             }
                         } else {
-                            setUsernameflg(true)
+                            message.warning('请输入用户名')
                         }
                     }}
                 >Login</button>

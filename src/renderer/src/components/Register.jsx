@@ -6,6 +6,7 @@ import { Input } from 'react-vant';
 import './Login1.scss'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { message } from 'antd';
 
 axios.defaults.baseURL = 'http://localhost:3000/'
 export default function Register() {
@@ -22,15 +23,15 @@ export default function Register() {
     return (
         <div className="login-right-navs">
             <h1>Create Account</h1>
-            <div className='login-right-nav'>
+            <div className='login-right-nav' style={{ border: flg === '请输入用户名' ? '1px solid red' : '' }}>
                 <p>Username</p>
                 <input type="text" placeholder='Enter your Username' value={username} onChange={e => setUsername(e.target.value)} />
             </div>
-            <div className='login-right-nav'>
+            <div className='login-right-nav' style={{ border: flg === '请输入邮箱' || flg === '请输入正确的邮箱' ? '1px solid red' : '' }}>
                 <p>Email</p>
                 <input type="text" placeholder='Enter your Email' value={email} onChange={e => setEmail(e.target.value)} />
             </div>
-            <div className='login-right-nav'>
+            <div className='login-right-nav' style={{ border: flg === '请输入密码' || flg === '两次输入密码不一致' ? '1px solid red' : '' }}>
                 <p>Password</p>
                 {/* <Input.Password
                             placeholder='Enter your Password'
@@ -45,7 +46,7 @@ export default function Register() {
                     placeholder='Enter Password'
                 />
             </div>
-            <div className='login-right-nav'>
+            <div className='login-right-nav' style={{ border: flg === '请确认密码' || flg === '两次输入密码不一致' ? '1px solid red' : '' }}>
                 <p>Confirm Password</p>
                 <Input
                     value={pwd}
@@ -85,9 +86,9 @@ export default function Register() {
                                                 if (data.code === 200) {
                                                     // 注册成功跳转至登录
                                                     navigate('/app/login/login')
-                                                    console.log(data.msg);
+                                                    message.success(data.msg)
                                                 } else {
-                                                    setflg(data.msg)
+                                                    message.warning(data.msg)
                                                 }
                                             } else {
                                                 setflg('两次输入密码不一致')

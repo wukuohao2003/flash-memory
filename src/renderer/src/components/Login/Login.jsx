@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './Login.scss'
-import loginleftbottom from '../assets/loginleftbottom.svg'
+import loginleftbottom from '../../assets/loginleftbottom.svg'
 import { Outlet, useLocation } from 'react-router-dom'
 
 export default function Login() {
-    const location = useLocation()
+    
     return (
         <div style={{ display: 'flex', width: '100%', height: '100%' }}>
             <div className='login-left'>

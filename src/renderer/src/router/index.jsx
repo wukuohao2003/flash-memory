@@ -1,9 +1,10 @@
 import App from '../App'
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Login from '../components/Login';
-import Login1 from '../components/Login1';
-import Register from '../components/Register';
-import Forgotpwd from '../components/Forgotpwd';
+import Login from '../components/Login/Login';
+import Login1 from '../components/Login/Login1';
+import Register from '../components/Login/Register';
+import Forgotpwd from '../components/Login/Forgotpwd';
+import SendEmail from '../components/Login/SendEmail';
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                     {
                         path: '/app/login/forgotpwd',
                         element: <Forgotpwd />
+                    },
+                    {
+                        path: '/app/login/sendEmail',
+                        element: <SendEmail />
                     }
                 ]
             }

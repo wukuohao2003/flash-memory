@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import gugeLogo from '../assets/gugeLogo.svg'
+import gugeLogo from '../../assets/gugeLogo.svg'
 // import { Input } from 'antd';
 // import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input } from 'react-vant';

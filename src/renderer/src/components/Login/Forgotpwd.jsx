@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Forgotpwd.scss'
-import gugeLogo from '../../assets/gugeLogo.svg'
+import PhoneLogo from '../../assets/gugeLogo.svg'
 import { message } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -48,7 +48,7 @@ export default function Forgotpwd() {
             </div>
             <div className="login-right-bottom">
                 <div className="login-right-bottom-t">
-                    <img src={gugeLogo} alt="" />
+                    <img src={PhoneLogo} alt="" onClick={() => { navigate('/app/login/phone') }} style={{cursor:'pointer'}} />
                 </div>
                 <p>Don't have an account? <span onClick={() => { navigate('/app/login/register') }}>Create Account</span></p>
             </div>

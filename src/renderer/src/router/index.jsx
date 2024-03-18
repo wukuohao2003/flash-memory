@@ -5,6 +5,7 @@ import Login1 from '../components/Login/Login1';
 import Register from '../components/Login/Register';
 import Forgotpwd from '../components/Login/Forgotpwd';
 import SendEmail from '../components/Login/SendEmail';
+import Phone from '../components/Login/Phone';
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                     {
                         path: '/app/login/sendEmail',
                         element: <SendEmail />
+                    },
+                    {
+                        path: '/app/login/phone',
+                        element: <Phone />
                     }
                 ]
             }
